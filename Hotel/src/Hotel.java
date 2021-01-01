@@ -364,8 +364,8 @@ public class Hotel {
 				double FamilyRoom = 1000;
 				double oneMeal = 90;
 				double twoMeal = 170;
-				double threemeal = 170;
-				/*****             Breakfast                        ***/
+				double threeMeal = 170;
+				/*****             Breakfast                       *****/
 				try {
 					if(comboBox_3.getSelectedItem().equals("Breakfast") && comboBox_4.getSelectedItem().equals("Single") ) {
 						double q = (SingleRoom+oneMeal);
@@ -415,9 +415,88 @@ public class Hotel {
 					
 					
 					
-					/*****             LUNCH                        */
-					if(comboBox_3.getSelectedItem().equals("Breakfast") && comboBox_4.getSelectedItem().equals("Family") ) {
-						double q = (FamilyRoom+oneMeal);
+					/*****             LUNCH                        ******/
+					if(comboBox_3.getSelectedItem().equals("Lunch") && comboBox_4.getSelectedItem().equals("Family") ) {
+						double q = (FamilyRoom+twoMeal);
+						double i = (q*14)/100;
+						String tax = String.format("₹ %.2f", i);
+						textField_17.setText(tax);
+						
+						String subTotal = String.format("₹ %.2f", q);
+						textField_18.setText(subTotal);
+						
+						String total = String.format("₹ %.2f", q+i);
+						textField_19.setText(total);
+						
+						
+						
+					}
+					if(comboBox_3.getSelectedItem().equals("Lunch") && comboBox_4.getSelectedItem().equals("Double") ) {
+						double q = (DoubleRoom+twoMeal);
+						double i = (q*14)/100;
+						String tax = String.format("₹ %.2f", i);
+						textField_17.setText(tax);
+						
+						String subTotal = String.format("₹ %.2f", q);
+						textField_18.setText(subTotal);
+						
+						String total = String.format("₹ %.2f", q+i);
+						textField_19.setText(total);
+						
+						
+						
+					}
+					if(comboBox_3.getSelectedItem().equals("Lunch") && comboBox_4.getSelectedItem().equals("Single") ) {
+						double q = (SingleRoom+twoMeal);
+						double i = (q*14)/100;
+						String tax = String.format("₹ %.2f", i);
+						textField_17.setText(tax);
+						
+						String subTotal = String.format("₹ %.2f", q);
+						textField_18.setText(subTotal);
+						
+						String total = String.format("₹ %.2f", q+i);
+						textField_19.setText(total);
+						
+						
+						
+					}
+					
+					
+					
+					/*****             Dinner                        ******/
+					if(comboBox_3.getSelectedItem().equals("Dinner") && comboBox_4.getSelectedItem().equals("Family") ) {
+						double q = (FamilyRoom+threeMeal);
+						double i = (q*14)/100;
+						String tax = String.format("₹ %.2f", i);
+						textField_17.setText(tax);
+						
+						String subTotal = String.format("₹ %.2f", q);
+						textField_18.setText(subTotal);
+						
+						String total = String.format("₹ %.2f", q+i);
+						textField_19.setText(total);
+						
+						
+						
+					}
+					if(comboBox_3.getSelectedItem().equals("Dinner") && comboBox_4.getSelectedItem().equals("Double") ) {
+						double q = (DoubleRoom+threeMeal);
+						double i = (q*14)/100;
+						String tax = String.format("₹ %.2f", i);
+						textField_17.setText(tax);
+						
+						String subTotal = String.format("₹ %.2f", q);
+						textField_18.setText(subTotal);
+						
+						String total = String.format("₹ %.2f", q+i);
+						textField_19.setText(total);
+						
+						
+						
+					}
+					if(comboBox_3.getSelectedItem().equals("Dinner") && comboBox_4.getSelectedItem().equals("Single") ) {
+						double q = (SingleRoom+threeMeal);
 						double i = (q*14)/100;
 						String tax = String.format("₹ %.2f", i);
 						textField_17.setText(tax);
