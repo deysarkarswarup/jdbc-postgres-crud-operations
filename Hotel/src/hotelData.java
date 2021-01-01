@@ -6,7 +6,7 @@ public class hotelData {
 		try {
 			Class.forName("org.sqlite.JDBC");
 			Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\deysa\\eclipse-workspace\\Hotel\\hoteldb.db");
-			JOptionPane.showMessageDialog(null, "connection Made");
+			//JOptionPane.showMessageDialog(null, "connection Made");
 			return conn;
 		}
 		catch(Exception e) {
