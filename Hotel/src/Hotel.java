@@ -112,6 +112,11 @@ public class Hotel {
 		Object col[] = {"CusRef","FirstName","SurName","Address","PostCode","Mobile","Email","Gender","DOB","Nationality","ProveofID","DateIn","DateOut","RoomType","RoomNo","RoomExt from hoteldb"};
 				model.setColumnIdentifiers(col);
 				table.setModel(model);
+				
+				JLabel lblNewLabel_1 = new JLabel("Hotel Record System");
+				lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 36));
+				lblNewLabel_1.setBounds(726, 33, 407, 37);
+				frame.getContentPane().add(lblNewLabel_1);
 				conn=hotelData.ConnectDB();
 				updateTable();
 		
@@ -122,6 +127,7 @@ public class Hotel {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setFont(new Font("Tempus Sans ITC", Font.PLAIN, 11));
 		frame.setBounds(0, 0, 1470, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -300,7 +306,7 @@ public class Hotel {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panel_1.setBounds(383, 11, 1061, 608);
+		panel_1.setBounds(383, 102, 1061, 517);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
