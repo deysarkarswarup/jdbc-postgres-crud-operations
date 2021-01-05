@@ -8,8 +8,7 @@ public class PostgreSQLJDBC_Insertion {
 	      try {
 	         Class.forName("org.postgresql.Driver");
 	         c = DriverManager
-	            .getConnection("jdbc:postgresql://localhost:5432/testdb",
-	            "postgres", "bharat");
+	            .getConnection("jdbc:postgresql://localhost:5432/testdb","postgres", "bharat");
 	         c.setAutoCommit(false);
 	         System.out.println("Opened database successfully");
 

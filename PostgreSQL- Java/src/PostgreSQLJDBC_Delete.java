@@ -2,15 +2,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-public class PostgreSQLJDBC6_Delete {
+public class PostgreSQLJDBC_Delete {
 	public static void main( String args[] ) {
 	      Connection c = null;
 	      Statement stmt = null;
 	      try {
 	         Class.forName("org.postgresql.Driver");
 	         c = DriverManager
-	            .getConnection("jdbc:postgresql://localhost:5432/testdb",
-	            "postgres", "bharat");
+	            .getConnection("jdbc:postgresql://localhost:5432/testdb","postgres", "bharat");
 	         c.setAutoCommit(false);
 	         System.out.println("Opened database successfully");
 

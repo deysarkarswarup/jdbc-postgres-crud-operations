@@ -3,7 +3,8 @@ import java.sql.DriverManager;
 
 public class PostgreSQLJDBC {
    public static void main(String args[]) {
-      Connection con = null;
+      @SuppressWarnings("unused")
+	Connection con = null;
       try {
          Class.forName("org.postgresql.Driver");
          con = DriverManager
