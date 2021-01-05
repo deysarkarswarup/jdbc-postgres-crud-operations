@@ -20,6 +20,9 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import com.toedter.calendar.JDateChooser;
 import com.toedter.components.JLocaleChooser;
+
+
+
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -51,9 +54,11 @@ public class Hotel {
 	 */
 	
 	public void updateTable() {
-		conn = hotelData.ConnectDB();
+//		conn = hotelData.ConnectDB();
+		//hotelData sqlConnect = new hotelData();
+		conn = hotelData.connect();
 		if(conn !=null) {
-			String sql="Select CusRef,FirstName,SurName,Address,PostCode,Mobile,Email,Gender,DOB,Nationality,ProveofID,DateIn,DateOut,RoomType,RoomNo,RoomExt from hoteldb";
+			String sql="Select cusref,firstName,SurName,sddress,PostCode,Mobile,Email,Gender,DOB,Nationality,ProveofID,DateIn,DateOut,RoomType,RoomNo,RoomExt from hoteldb";
 			
 			
 			try {
@@ -65,7 +70,7 @@ public class Hotel {
 					columnData[0] = rs.getString("CusRef");
 					columnData[1] = rs.getString("FirstName");
 					columnData[2] = rs.getString("SurName");
-					columnData[3] = rs.getString("Address");
+					columnData[3] = rs.getString("sddress");
 					columnData[4] = rs.getString("PostCode");
 					columnData[5] = rs.getString("Mobile");
 					columnData[6] = rs.getString("Email");
@@ -82,7 +87,7 @@ public class Hotel {
 				}
 			}
 			catch(Exception e) {
-				JOptionPane.showMessageDialog(null, "connection Error");
+				JOptionPane.showMessageDialog(null, "connection Error");System.out.println("Failed2");
 				//e.printStackTrace();
 				
 			}
@@ -97,7 +102,7 @@ public class Hotel {
 					Hotel window = new Hotel();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					e.printStackTrace();System.out.println("Failed3");
 				}
 			}
 		});
@@ -109,7 +114,7 @@ public class Hotel {
 	public Hotel() {
 		initialize();
 		
-		Object col[] = {"CusRef","FirstName","SurName","Address","PostCode","Mobile","Email","Gender","DOB","Nationality","ProveofID","DateIn","DateOut","RoomType","RoomNo","RoomExt from hoteldb"};
+		Object col[] = {"CusRef","FirstName","SurName","sddress","PostCode","Mobile","Email","Gender","DOB","Nationality","ProveofID","DateIn","DateOut","RoomType","RoomNo","RoomExt"};
 				model.setColumnIdentifiers(col);
 				table.setModel(model);
 				
@@ -117,7 +122,7 @@ public class Hotel {
 				lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 36));
 				lblNewLabel_1.setBounds(726, 33, 407, 37);
 				frame.getContentPane().add(lblNewLabel_1);
-				conn=hotelData.ConnectDB();
+				conn = hotelData.connect();
 				updateTable();
 		
 	}
@@ -168,10 +173,10 @@ public class Hotel {
 		textField_2.setBounds(131, 99, 200, 29);
 		panel.add(textField_2);
 		
-		JLabel lblAddress = new JLabel("Address");
-		lblAddress.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblAddress.setBounds(20, 137, 113, 17);
-		panel.add(lblAddress);
+		JLabel lblsddress = new JLabel("sddress");
+		lblsddress.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblsddress.setBounds(20, 137, 113, 17);
+		panel.add(lblsddress);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
@@ -319,7 +324,7 @@ public class Hotel {
 			new Object[][] {
 			},
 			new String[] {
-				"CustomerRef", "FirstName", "Surname", "Address", "Post Code", "Mobile", "Email", "Gender", "Date of Birth", "Nationality", "Proof of Id", "Date In", "Date Out", "Room type", "Room No", "Room Extension No"
+				"CustomerRef", "FirstName", "Surname", "sddress", "Post Code", "Mobile", "Email", "Gender", "Date of Birth", "Nationality", "Proof of Id", "Date In", "Date Out", "Room type", "Room No", "Room Extension No"
 			}
 		));
 		table.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
@@ -531,7 +536,7 @@ public class Hotel {
 		JButton btnUpdate = new JButton("Update");
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String sql = "INSERT INTO hoteldb(CusRef,FirstName,SurName,Address,PostCode,Mobile,Email,Gender,DOB,Nationality,ProveofID,DateIn,DateOut,RoomType,RoomNo,RoomExt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				String sql = "INSERT INTO hoteldb(CusRef,FirstName,SurName,sddress,PostCode,Mobile,Email,Gender,DOB,Nationality,ProveofID,DateIn,DateOut,RoomType,RoomNo,RoomExt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 
 				try {
@@ -563,7 +568,7 @@ public class Hotel {
 					
 				}
 				catch(Exception ev) {
-					JOptionPane.showMessageDialog(null, ev);
+					JOptionPane.showMessageDialog(null, ev);System.out.println("Failed4");
 				}
 				
 				if(table.getSelectedRow()==-1) {
