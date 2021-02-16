@@ -2,6 +2,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+//Author Swarup
 public class PostgreSQLJDBC_Update {
 	public static void main( String args[] ) {
 	      Connection c = null;
