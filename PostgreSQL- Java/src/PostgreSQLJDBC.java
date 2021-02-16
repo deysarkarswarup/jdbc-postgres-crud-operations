@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+//Author Swarup
 public class PostgreSQLJDBC {
    public static void main(String args[]) {
       @SuppressWarnings("unused")
